@@ -1,0 +1,77 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Card, { ShadowDirection } from './index.tsx'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Card' component={Card} />
+
+export const Template = (args) => (
+  <Card {...args}>
+    Un pequeño cuadro de texto con un fondo oscuro para mostrar etiquetas o
+    información enfatizada en un área condensada.
+  </Card>
+)
+
+# Card
+
+Un pequeño cuadro de texto con un fondo oscuro para mostrar etiquetas o información enfatizada en un área condensada.
+
+## **holiwi**
+
+- They have patterned drop shadow to indicate that are outside the normal document flow.
+- This is a shared component for Toast, Dialog, and Coachmark; before using this component directly please check that these components do not cover your use case!
+- Tooltip shares many styles with FloatingCards but is used more widely and does not have a shadow as that might detract from the critical functions it serves.
+
+<Story
+  name='Basic'
+  args={{
+    color: 'default',
+    shadow: true
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+## **Shadows directions**
+
+- This is a shared component for Toast, Dialog, and Coachmark; before using this component directly please check that these components do not cover your use case!
+- Tooltip shares many styles with FloatingCards but is used more widely and does not have a shadow as that might detract from the critical functions it serves.
+
+<Canvas>
+  <Story
+    name='Primary'
+    args={{
+      color: 'default',
+      shadow: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Danger'
+    args={{
+      color: 'default',
+      shadow: true,
+      shadowDirection: ShadowDirection.RIGHT
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Tipado del componente
+
+detalle de la interfaz de las propiedades de **Card**
+
+<Source
+  language='typescript'
+  code={dedent`
+    export interface CardProps {
+      color: 'default' | 'white' | 'primary'
+      shadow?: boolean
+      shadowDirection?: 'left' | 'right'
+      border?: boolean
+      children: any
+    }
+  `}
+/>

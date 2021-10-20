@@ -22,7 +22,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
@@ -31,9 +31,13 @@
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-docs": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
+    "@storybook/addons": "^6.3.12",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.12",
+    "@storybook/theming": "^6.3.12",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -46,6 +50,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.2",
+    "css-loader": "^6.4.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
@@ -64,6 +69,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
+    "sass": "^1.43.2",
+    "sass-loader": "^12.2.0",
+    "style-loader": "^3.3.0",
     "typescript": "^3.7.5"
   },
   "files": [

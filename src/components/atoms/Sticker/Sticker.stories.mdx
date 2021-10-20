@@ -1,0 +1,125 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Sticker, { StickerColors } from './index.tsx'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Sticker' component={Sticker} />
+
+export const Template = (args) => <Sticker {...args} />
+
+# Sticker
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+## **Pautas de uso**
+
+- They have patterned drop shadow to indicate that are outside the normal document flow.
+- This is a shared component for Toast, Dialog, and Coachmark; before using this component directly please check that these components do not cover your use case!
+
+<Story name='None' args={{}}>
+  {Template.bind({})}
+</Story>
+
+## **Variantes**
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+<Canvas>
+  <Story
+    name='Default'
+    args={{
+      text: 'Default'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Warning'
+    args={{
+      text: 'Warning',
+      color: StickerColors.WARNING
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Primary'
+    args={{
+      text: 'Primary',
+      color: StickerColors.PRIMARY
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Secondary'
+    args={{
+      text: 'Success',
+      color: StickerColors.SUCCESS
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  {/*  */}
+  <Story
+    name='Warning Light'
+    args={{
+      text: 'Warning Light',
+      color: StickerColors.WARNING_LIGHT
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Primary Light'
+    args={{
+      text: 'Primary Light',
+      color: StickerColors.PRIMARY_LIGHT
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Success Light'
+    args={{
+      text: 'Success Light',
+      color: StickerColors.SUCCESS_LIGHT
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Tipados
+
+**interfaz** del componente **Sticker**
+
+<Source
+  language='typescript'
+  code={dedent`
+    export interface StickerProps {
+    color: 'default' | 'white' | 'primary'
+    shadow?: boolean
+    shadowDirection?: 'left' | 'right'
+    border?: boolean
+    children: any
+  }
+`}
+/>
+
+**enum** de colores del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+  export enum StickerColors {
+    PRIMARY,
+    DEFAULT,
+    SUCCESS,
+    WARNING,
+    SUCCESS_LIGHT,
+    PRIMARY_LIGHT,
+    WARNING_LIGHT
+  }
+`}
+/>

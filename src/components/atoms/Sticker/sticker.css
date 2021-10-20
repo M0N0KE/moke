@@ -1,0 +1,45 @@
+.sticker {
+  align-items: center;
+  min-width: 52px;
+  width: auto;
+  height: 26px;
+  box-shadow: -2px 2px 0 #10162f;
+  display: inline-flex;
+  justify-content: center;
+  padding: 3px;
+  font-weight: bold;
+
+  padding-left: 3px;
+  background-color: transparent;
+}
+.sticker__text {
+  font-size: inherit;
+  display: inline-block;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #10162f;
+}
+.sticker--default {
+  background-color: #ffffff;
+}
+
+.sticker--success {
+  background-color: #2aa89f;
+}
+.sticker--success-light {
+  background-color: #d7efed;
+}
+
+.sticker--warning {
+  background-color: #ff6a48;
+}
+.sticker--warning-light {
+  background-color: #f2b694;
+}
+.sticker--primary {
+  background-color: #71c1f6;
+}
+.sticker--primary-light {
+  background-color: #aceafb;
+}
