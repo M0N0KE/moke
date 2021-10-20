@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, Preview } from '@storybook/addon-docs'
+
+import Badge from './Badge.tsx'
+
+<Meta title='Atoms/Badge' component={Badge} />
+
+# Badge
+
+Un pequeño cuadro de texto con un fondo oscuro para mostrar etiquetas o información enfatizada en un área condensada.
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = (args) => <Badge {...args} />
+
+<Canvas>
+  <Story
+    name='Primary'
+    args={{
+      text: 'Primary',
+      color: 'true'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Secondary'
+    args={{
+      text: 'segundon'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Danger'
+    args={{
+      text: 'DANGER'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
