@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
 
-import Sticker, { StickerColors } from './index.tsx'
+import Sticker from './index.tsx'
+import { Colors } from '../../../commons'
 import dedent from 'ts-dedent'
 
 <Meta title='Atoms/Sticker' component={Sticker} />
@@ -9,117 +10,72 @@ export const Template = (args) => <Sticker {...args} />
 
 # Sticker
 
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+Un pequeño "cuadro" de texto para resaltar alguna información enfatizada.
 
-## **Pautas de uso**
+## Uso del componente
 
-- They have patterned drop shadow to indicate that are outside the normal document flow.
-- This is a shared component for Toast, Dialog, and Coachmark; before using this component directly please check that these components do not cover your use case!
+<Source
+  language='typescript'
+  code={dedent`
+    <Sticker text="TXT" variant={Color.SUCCESS_LIGHT} />
+  `}
+/>
+Resultado: 🤗{' '}
 
-<Story name='None' args={{}}>
-  {Template.bind({})}
-</Story>
+<Sticker variant={Colors.SUCCESS_LIGHT} />
 
 ## **Variantes**
 
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+Existen colores establecidos para poder usar a conveniencia. Todos colores claros asociados a la paleta de colores de la app.
 
 <Canvas>
-  <Story
-    name='Default'
-    args={{
-      text: 'Default'
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Default'>
+    <Sticker text='Default' />
   </Story>
-  <Story
-    name='Warning'
-    args={{
-      text: 'Warning',
-      color: StickerColors.WARNING
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Warning'>
+    <Sticker text='Warning' variant={Colors.WARNING} />
   </Story>
-  <Story
-    name='Primary'
-    args={{
-      text: 'Primary',
-      color: StickerColors.PRIMARY
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Primary'>
+    <Sticker text='Primary' variant={Colors.PRIMARY} />
   </Story>
-  <Story
-    name='Secondary'
-    args={{
-      text: 'Success',
-      color: StickerColors.SUCCESS
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Secondary'>
+    <Sticker text='Success' variant={Colors.SUCCESS} />
   </Story>
   {/*  */}
-  <Story
-    name='Warning Light'
-    args={{
-      text: 'Warning Light',
-      color: StickerColors.WARNING_LIGHT
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Warning Light'>
+    <Sticker text='Warning Light' variant={Colors.WARNING_LIGHT} />
   </Story>
-  <Story
-    name='Primary Light'
-    args={{
-      text: 'Primary Light',
-      color: StickerColors.PRIMARY_LIGHT
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Primary Light'>
+    <Sticker text='Primary Light' variant={Colors.PRIMARY_LIGHT} />
   </Story>
-  <Story
-    name='Success Light'
-    args={{
-      text: 'Success Light',
-      color: StickerColors.SUCCESS_LIGHT
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Success Light'>
+    <Sticker text='Success Light' variant={Colors.SUCCESS_LIGHT} />
   </Story>
 </Canvas>
 
-## Tipados
+## Detalles Técnicos
 
-**interfaz** del componente **Sticker**
+**interfaz** del componente.
 
-<Source
-  language='typescript'
-  code={dedent`
-    export interface StickerProps {
-    color: 'default' | 'white' | 'primary'
-    shadow?: boolean
-    shadowDirection?: 'left' | 'right'
-    border?: boolean
-    children: any
-  }
-`}
-/>
+```ts
+interface StickerProps {
+  variant: Colors
+  shadow?: boolean
+  border?: boolean
+  shadowDirection?: 'left' | 'right'
+}
+```
 
-**enum** de colores del componente
+**enum** de colores.
 
-<Source
-  language='typescript'
-  code={dedent`
-  export enum StickerColors {
-    PRIMARY,
-    DEFAULT,
-    SUCCESS,
-    WARNING,
-    SUCCESS_LIGHT,
-    PRIMARY_LIGHT,
-    WARNING_LIGHT
-  }
-`}
-/>
+```ts
+enum Colors {
+  PRIMARY = 'primary',
+  DEFAULT = 'default',
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  SUCCESS_LIGHT = 'success-light',
+  PRIMARY_LIGHT = 'primary-light',
+  WARNING_LIGHT = 'warning-light'
+}
+```

@@ -9,8 +9,8 @@
   padding: 0.75rem;
   max-width: 100%;
   position: relative;
-  z-index: 1;
   background-color: white;
+  z-index: 1;
   padding: 2rem;
 }
 
@@ -24,19 +24,30 @@
 .card__shadow--left {
   left: -0.5rem;
 }
-
 .card__shadow--right {
   right: -0.5rem;
 }
-
-.bg-default {
+.card__content--default {
   background-color: #ffffff;
 }
-
-.bg-primary {
-  background-color: #f5fcff;
+.card__content--success {
+  background-color: #2aa89f;
 }
-
+.card__content--success-light {
+  background-color: #d7efed;
+}
+.card__content--warning {
+  background-color: #ff6a48;
+}
+.card__content--warning-light {
+  background-color: #f2b694;
+}
+.card__content--primary {
+  background-color: #71c1f6;
+}
+.card__content--primary-light {
+  background-color: #aceafb;
+}
 .border {
   border: 1px solid #10162f;
 }

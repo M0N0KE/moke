@@ -1,0 +1,43 @@
+.button {
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  position: relative;
+  font-weight: 700;
+  box-shadow: -4px 4px 0 0 #10162f;
+  border-radius: 2px;
+  justify-content: center;
+  white-space: nowrap;
+  border-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.button--small {
+  padding: 0.4rem 0.75rem;
+}
+
+.button--default {
+  background-color: #fff;
+  color: #10162f;
+}
+
+.button--success {
+  background-color: #2aa89f;
+}
+
+.button--success-light {
+  background-color: #d7efed;
+}
+.button--warning {
+  background-color: #ff6a48;
+}
+.button--warning-light {
+  background-color: #f2b694;
+}
+.button--primary {
+  background-color: #71c1f6;
+}
+.button--primary-light {
+  background-color: #aceafb;
+}

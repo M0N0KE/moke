@@ -1,32 +1,24 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { Colors } from '../../../commons'
 import './card.css'
 
 /**
  * @description enum para controlar la dirección de la sombra
  */
-export enum ShadowDirection {
-  LEFT = 'left',
-  RIGHT = 'right'
-}
-
-/**
- * @description para colores de las Card
- */
-export enum CardColors {
-  DEFAULT = 'default',
-  PRIMARY = 'primary'
-}
+// export enum ShadowDirection {
+//   LEFT = 'left',
+//   RIGHT = 'right'
+// }
 
 /**
  * @description interfaz de tipado del componente
  */
 export interface CardProps {
-  color?: CardColors
+  variant?: Colors
   shadow?: boolean
-  shadowDirection?: ShadowDirection
+  shadowDirection?: 'left' | 'right'
   border?: boolean
-  children: any
 }
 
 export const svgShadow = (shadowDirection: string) => (
@@ -55,13 +47,15 @@ const Card: React.FC<CardProps> = ({
   children,
   border = true,
   shadow = false,
-  color = CardColors.DEFAULT,
-  shadowDirection = ShadowDirection.LEFT
+  variant = Colors.DEFAULT,
+  shadowDirection = 'left'
 }) => {
   return (
-    <div className={`card bg-${color} ${border && 'border'}`}>
+    <div className={`card ${border && 'border'}`}>
       {shadow && svgShadow(shadowDirection)}
-      <div className='card__content'>{children}</div>
+      <div className={`card__content card__content--${variant}`}>
+        {children}
+      </div>
     </div>
   )
 }

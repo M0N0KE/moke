@@ -1,31 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import './sticker.css'
+import { Colors } from '../../../commons'
 
-/**
- * @description enum de colores
- */
-export enum StickerColors {
-  PRIMARY = 'primary',
-  DEFAULT = 'default',
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  SUCCESS_LIGHT = 'success-light',
-  PRIMARY_LIGHT = 'primary-light',
-  WARNING_LIGHT = 'warning-light'
-}
+import './sticker.css'
 
 /**
  * @description tipado del componente
  */
 export interface StickerProps {
   text?: string
-  color?: StickerColors
+  variant?: Colors
 }
 
-const Sticker: React.FC<StickerProps> = ({ color, text = 'TXT' }) => {
+const Sticker: React.FC<StickerProps> = ({ variant, text = 'TXT' }) => {
   return (
-    <div className={`sticker sticker--${color}`}>
+    <div className={`sticker sticker--${variant}`}>
       <span className='sticker__text'>{text}</span>
     </div>
   )

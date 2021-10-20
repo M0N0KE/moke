@@ -1,42 +1,116 @@
-import { Meta, Story, Canvas, Preview } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
 
 import Button from './index.tsx'
+import { Colors } from '../../../commons'
+import './button.css'
+import dedent from 'ts-dedent'
 
 <Meta title='Atoms/Button' component={Button} />
 
 # Button
 
-This is your Story template function, shown here in React
-This is your Story template function, shown here in React
+Elemento principal gatillador de acciones especificas.
 
-<!--- This is your Story template function, shown here in React -->
+## Uso del componente
 
-export const Template = (args) => <Button {...args} />
+<Source
+  language='typescript'
+  code={dedent`
+    <Button color={Colors.DEFAULT} >
+      Submit
+    </Button>
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Button color={Colors.DEFAULT}>Submit</Button>
+
+## **Variantes**
+
+Los botones los podras encontrar en diferentes colores y tamaños.
 
 <Canvas>
-  <Story
-    name='Primary'
-    args={{
-      text: 'Primary',
-      color: 'true'
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Success'>
+    <Button variant={Colors.SUCCESS}>Success</Button>
   </Story>
-  <Story
-    name='Secondary'
-    args={{
-      text: 'segundon'
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Success Light'>
+    <Button variant={Colors.SUCCESS_LIGHT}>Success</Button>
   </Story>
-  <Story
-    name='Danger'
-    args={{
-      text: 'DANGER'
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Primary'>
+    <Button variant={Colors.PRIMARY}>Primary</Button>
+  </Story>
+  <Story name='Primary Light'>
+    <Button variant={Colors.PRIMARY_LIGHT}>Success</Button>
+  </Story>
+  <Story name='Warning'>
+    <Button variant={Colors.WARNING}>Warning</Button>
+  </Story>
+  <Story name='Warning Light'>
+    <Button variant={Colors.WARNING_LIGHT}>Warning</Button>
   </Story>
 </Canvas>
+
+## **Tamaño pequeño**
+
+Para activar el tamaño pequeño, solo debes pasar la prop **small?** en **true**.
+
+<Canvas>
+  <Story name='Success small'>
+    <Button small={true} variant={Colors.SUCCESS}>
+      Success
+    </Button>
+  </Story>
+  <Story name='Success Light small'>
+    <Button small={true} variant={Colors.SUCCESS_LIGHT}>
+      Success
+    </Button>
+  </Story>
+  <Story name='Primary small'>
+    <Button small={true} variant={Colors.PRIMARY}>
+      Primary
+    </Button>
+  </Story>
+  <Story name='Primary Light small'>
+    <Button small={true} variant={Colors.PRIMARY_LIGHT}>
+      Success
+    </Button>
+  </Story>
+  <Story name='Warning small'>
+    <Button small={true} variant={Colors.WARNING}>
+      Warning
+    </Button>
+  </Story>
+  <Story name='Warning Light small'>
+    <Button small={true} variant={Colors.WARNING_LIGHT}>
+      Warning
+    </Button>
+  </Story>
+</Canvas>
+
+## Detalles Técnicos
+
+tipado del componente
+
+```ts
+interface ButtonProps {
+  disabled?: boolean
+  variant?: Colors
+  small?: boolean
+  type?: 'button' | 'submit'
+  handleClick: () => void
+}
+```
+
+**enum** de colores.
+
+```ts
+enum Colors {
+  PRIMARY = 'primary',
+  DEFAULT = 'default',
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  SUCCESS_LIGHT = 'success-light',
+  PRIMARY_LIGHT = 'primary-light',
+  WARNING_LIGHT = 'warning-light'
+}
+```

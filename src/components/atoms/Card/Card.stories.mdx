@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
 
-import Card, { ShadowDirection } from './index.tsx'
+import Card from './index.tsx'
+import { Colors } from '../../../commons'
 import dedent from 'ts-dedent'
 
 <Meta title='Atoms/Card' component={Card} />
@@ -14,64 +15,102 @@ export const Template = (args) => (
 
 # Card
 
-Un pequeño cuadro de texto con un fondo oscuro para mostrar etiquetas o información enfatizada en un área condensada.
+Una tarjeta para presentar de diferentes formas diferentes informaciones.
 
-## **holiwi**
+## Uso del componente
 
-- They have patterned drop shadow to indicate that are outside the normal document flow.
-- This is a shared component for Toast, Dialog, and Coachmark; before using this component directly please check that these components do not cover your use case!
-- Tooltip shares many styles with FloatingCards but is used more widely and does not have a shadow as that might detract from the critical functions it serves.
+<Source
+  language='typescript'
+  code={dedent`
+    <Card variant={ButtonColors.DEFAULT} >
+      Una tarjeta para presentar de diferentes formas diferentes informaciones.
+    </Card>
+  `}
+/>
+Resultado: 🤗{' '}
 
 <Story
   name='Basic'
   args={{
-    color: 'default',
-    shadow: true
+    variant: 'default',
+    shadow: false
   }}
 >
   {Template.bind({})}
 </Story>
 
-## **Shadows directions**
+## Variantes
 
-- This is a shared component for Toast, Dialog, and Coachmark; before using this component directly please check that these components do not cover your use case!
-- Tooltip shares many styles with FloatingCards but is used more widely and does not have a shadow as that might detract from the critical functions it serves.
+las variantes no solo son de colores, si no tambien sombra. La cual podrás indicar al componete si apunta a la derecha o a la izquierda.
 
 <Canvas>
-  <Story
-    name='Primary'
-    args={{
-      color: 'default',
-      shadow: true
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Default'>
+    <Card shadow={false}>Sin Shadow</Card>
   </Story>
-  <Story
-    name='Danger'
-    args={{
-      color: 'default',
-      shadow: true,
-      shadowDirection: ShadowDirection.RIGHT
-    }}
-  >
-    {Template.bind({})}
+  <Story name='Shadow'>
+    <Card shadow={true}>Con Shadow</Card>
+  </Story>
+  <Story name='Shadow Left'>
+    <Card shadow={true} ShadowDirection='left'>
+      Con Shadow izquierda
+    </Card>
+  </Story>
+  <Story name='Shadow Right'>
+    <Card shadow={true} shadowDirection='right'>
+      Con Shadow derecha
+    </Card>
   </Story>
 </Canvas>
 
-## Tipado del componente
+## Colores
 
-detalle de la interfaz de las propiedades de **Card**
+<Canvas>
+  <Story name='Primary'>
+    <Card variant={Colors.DEFAULT} shadow={false}>
+      Sin Shadow
+    </Card>
+  </Story>
+  <Story name='Success'>
+    <Card variant={Colors.PRIMARY_LIGHT} shadow={true}>
+      Con Shadow
+    </Card>
+  </Story>
+  <Story name='Warning'>
+    <Card variant={Colors.SUCCESS_LIGHT} shadow={true} ShadowDirection='left'>
+      Con Shadow izquierda
+    </Card>
+  </Story>
+  <Story name='Warning Light'>
+    <Card variant={Colors.WARNING_LIGHT} shadow={true} shadowDirection='right'>
+      Con Shadow derecha
+    </Card>
+  </Story>
+</Canvas>
 
-<Source
-  language='typescript'
-  code={dedent`
-    export interface CardProps {
-      color: 'default' | 'white' | 'primary'
-      shadow?: boolean
-      shadowDirection?: 'left' | 'right'
-      border?: boolean
-      children: any
-    }
-  `}
-/>
+## Detalles Técnicos
+
+Interfaz del componente.
+
+```ts
+interface CardProps {
+  variant: Colors
+  shadow?: boolean
+  shadowDirection?: 'left' | 'right'
+  border?: boolean
+  children: any
+}
+```
+
+enum de colores.
+
+```ts
+enum Colors {
+  PRIMARY = 'primary',
+  DEFAULT = 'default',
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  SUCCESS_LIGHT = 'success-light',
+  PRIMARY_LIGHT = 'primary-light',
+  WARNING_LIGHT = 'warning-light'
+}
+```
