@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Logo from './index.tsx'
+import { Colors } from '../../../commons'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Logo' component={Logo} />
+
+# Component
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+## Uso del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Logo/>
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Logo />
+
+## Variantes
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+<Canvas>
+  <Story name='Primary'>
+    <Logo />
+  </Story>
+  <Story name='Secondary'>
+    <Logo />
+  </Story>
+</Canvas>
+
+## Detalles Técnicos
+
+Interfaz del componente
+
+```ts
+interface Colors {
+  PRIMARY
+  DEFAULT
+  SUCCESS
+  WARNING
+  SUCCESS_LIGHT
+  PRIMARY_LIGHT
+  WARNING_LIGHT
+}
+```
