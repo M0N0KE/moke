@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Select from './index.tsx'
+import { Colors } from '../../../commons'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Select' component={Select} />
+
+# Select
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+## Uso del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Select />
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Select />
+
+## Variantes
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+<Canvas>
+  <Story name='Base'>
+    <Select />
+  </Story>
+  <Story name='Small'>
+    <Select variant='small' />
+  </Story>
+  <Story name='Disabled'>
+    <Select disabled={true} />
+  </Story>
+</Canvas>
+
+### Select small
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Select variant='small' />
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Select variant='small' />
+
+## Detalles Técnicos
+
+Interfaz del componente
+
+```ts
+interface SelectProps {
+  options: Array<any>
+  variant: 'base' | 'small'
+  disabled: boolean
+}
+```

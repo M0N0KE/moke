@@ -1,5 +1,5 @@
 .card {
-  display: inline-block;
+  display: flex;
   max-width: 100%;
   position: relative;
   z-index: 1;
@@ -8,6 +8,7 @@
 .card__content {
   padding: 0.75rem;
   max-width: 100%;
+  width: 100%;
   position: relative;
   background-color: white;
   z-index: 1;
@@ -36,11 +37,18 @@
 .card__content--success-light {
   background-color: #d7efed;
 }
-.card__content--warning {
+
+.card__content--danger {
   background-color: #ff6a48;
 }
-.card__content--warning-light {
+.card__content--danger-light {
   background-color: #f2b694;
+}
+.card__content--warning {
+  background-color: #f2e59f;
+}
+.card__content--warning-light {
+  background-color: #fff67d;
 }
 .card__content--primary {
   background-color: #71c1f6;

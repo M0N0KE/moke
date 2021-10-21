@@ -1,21 +1,21 @@
 import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
 
 import Logo from './index.tsx'
-import { Colors } from '../../../commons'
+import './logo.css'
 import dedent from 'ts-dedent'
 
 <Meta title='Atoms/Logo' component={Logo} />
 
 # Component
 
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+Nuestro hermoso logo <3
 
 ## Uso del componente
 
 <Source
   language='typescript'
   code={dedent`
-    <Logo/>
+    <Logo />
   `}
 />
 Resultado: 🤗{' '}
@@ -24,13 +24,13 @@ Resultado: 🤗{' '}
 
 ## Variantes
 
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+Variantes de tamaño y estilos del logo Monoke.
 
 <Canvas>
-  <Story name='Primary'>
+  <Story name='Monoke'>
     <Logo />
   </Story>
-  <Story name='Secondary'>
+  <Story name='Monoke White'>
     <Logo />
   </Story>
 </Canvas>
@@ -40,13 +40,7 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dign
 Interfaz del componente
 
 ```ts
-interface Colors {
-  PRIMARY
-  DEFAULT
-  SUCCESS
-  WARNING
-  SUCCESS_LIGHT
-  PRIMARY_LIGHT
-  WARNING_LIGHT
+interface LogoProps {
+  variant: 'monoke' | 'monoke-w' | 'monoke-iso' | 'monoke-iso-w'
 }
 ```

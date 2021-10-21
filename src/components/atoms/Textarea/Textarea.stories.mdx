@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Textarea from './index.tsx'
+import { Colors } from '../../../commons'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Textarea' component={Textarea} />
+
+# Textarea
+
+Un componente `<textarea />` para la entrada de texto de formato largo.
+
+## Uso del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Textarea>Hola Mundo !!</Textarea>
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Textarea>Hola Mundo !!</Textarea>
+
+## Variantes
+
+Estado deshabilitado, error, etc.
+
+<Canvas>
+  <Story name='Base'>
+    <Textarea>Hola Mundo !!</Textarea>
+  </Story>
+  <Story name='Disabled'>
+    <Textarea disabled={true}>Hola Mundo !!</Textarea>
+  </Story>
+  <Story name='Error'>
+    <Textarea error={true}>Hola Mundo !!</Textarea>
+  </Story>
+</Canvas>
+
+---
+
+## Detalles Técnicos
+
+Interfaz del componente
+
+```ts
+interface TextareaProps {
+  disabled: boolean
+  error: boolean
+}
+```

@@ -1,0 +1,125 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Alert from './index.tsx'
+import { Colors } from '../../../commons'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Alert' component={Alert} />
+
+# Alert
+
+La alerta siempre es importante para mostrar mensajes de importancia y concisos.
+
+## Uso del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Alert variant={Color.PRIMARY} border={true} >
+      ## Uso del componente
+    </Alert>
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Alert variant={Colors.PRIMARY} border={true}>
+  ## Uso del componente
+</Alert>
+
+## Variantes
+
+Colores y bordes.
+
+<Canvas>
+  <Story name='Default'>
+    <Alert variant={Colors.DEFAULT}>Alert Default</Alert>
+  </Story>
+  <Story name='Primary'>
+    <Alert variant={Colors.PRIMARY}>Alert Primary</Alert>
+  </Story>
+  <Story name='Success'>
+    <Alert variant={Colors.SUCCESS}>Alert Success</Alert>
+  </Story>
+  <Story name='Warning'>
+    <Alert variant={Colors.WARNING}>Alert Warning</Alert>
+  </Story>
+  <Story name='Border'>
+    <Alert variant={Colors.DEFAULT} border='true'>
+      Alert Border
+    </Alert>
+  </Story>
+</Canvas>
+
+### Default
+
+<Alert variant={Colors.DEFAULT}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+### Primary
+
+<Alert variant={Colors.PRIMARY}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+### Primary Light
+
+<Alert variant={Colors.PRIMARY_LIGHT}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+### Success
+
+<Alert variant={Colors.SUCCESS}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+### Success Light
+
+<Alert variant={Colors.SUCCESS_LIGHT}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+### Warning
+
+<Alert variant={Colors.WARNING}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+### Warning Light
+
+<Alert variant={Colors.WARNING_LIGHT}>
+  Only use Feature alert for product/feature announcements that are specific to
+  that page (e.g. Dashboard, Catalog, Profile, LE)
+</Alert>
+
+## Detalles Técnicos
+
+Interfaz del componente.
+
+```ts
+interface AlertProps {
+  variant: Colors
+  border: boolean
+}
+```
+
+Enum de colores.
+
+```ts
+interface Colors {
+  PRIMARY
+  DEFAULT
+  SUCCESS
+  WARNING
+  SUCCESS_LIGHT
+  PRIMARY_LIGHT
+  WARNING_LIGHT
+}
+```

@@ -23,6 +23,7 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
+    "st": "start-storybook -s ./public -p 9001",
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
@@ -69,9 +70,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "sass": "^1.43.2",
+    "sass": "^1.43.3",
     "sass-loader": "^12.2.0",
-    "style-loader": "^3.3.0",
+    "style-loader": "^3.3.1",
     "typescript": "^3.7.5"
   },
   "files": [

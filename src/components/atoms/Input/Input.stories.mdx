@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Input from './index.tsx'
+import { Colors } from '../../../commons'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Input' component={Input} />
+
+# Input
+
+Un elemento `<input />` general para manejar tipos de entrada de "texto", "número" y "archivo"
+
+## Uso del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Input placeholder='Input default ...' />
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Input placeholder='Input default ...' />
+
+## Variantes
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam quis, dignissimos quae, id nihil facilis eveniet atque consequatur nemo officia? Id ipsa expedita nulla nesciunt, tenetur magnam laboriosam pariatur!
+
+<Canvas>
+  <Story name='Default'>
+    <Input placeholder='Input default ...' />
+  </Story>
+  <Story name='Disabled'>
+    <Input placeholder='Input disabled ...' disabled={true} />
+  </Story>
+</Canvas>
+
+## Detalles Técnicos
+
+Interfaz del componente
+
+```ts
+interface InputProps {
+  name?: string
+  disabled: boolean
+  placeholder?: string
+  type: 'text' | 'password' | 'email'
+}
+```

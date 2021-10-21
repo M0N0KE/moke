@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, Preview, Source } from '@storybook/addon-docs'
+
+import Typography from './index.tsx'
+import { Colors } from '../../../commons'
+import dedent from 'ts-dedent'
+
+<Meta title='Atoms/Typography' component={Typography} />
+
+# Typography
+
+Tamaños en tipografía de titulos.
+
+## Uso del componente
+
+<Source
+  language='typescript'
+  code={dedent`
+    <Typography variant='h4'>HOLA H1</Typography>
+  `}
+/>
+Resultado: 🤗{' '}
+
+<Typography variant='h4'>HOLA H1</Typography>
+
+## Variantes
+
+los 6 tamaños disponibles.
+
+<Canvas>
+  <Story name='H1'>
+    <Typography variant='h1'>H1. Moke heading</Typography>
+  </Story>
+  <Story name='H2'>
+    <Typography variant='h2'>H2. Moke heading</Typography>
+  </Story>
+  <Story name='H3'>
+    <Typography variant='h3'>H3. Moke heading</Typography>
+  </Story>
+  <Story name='H4'>
+    <Typography variant='h4'>H4. Moke heading</Typography>
+  </Story>
+  <Story name='H5'>
+    <Typography variant='h5'>H5. Moke heading</Typography>
+  </Story>
+  <Story name='H6'>
+    <Typography variant='h6'>H6. Moke heading</Typography>
+  </Story>
+</Canvas>

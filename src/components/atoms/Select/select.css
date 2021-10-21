@@ -1,0 +1,57 @@
+.select {
+  appearance: none;
+  cursor: pointer;
+  height: auto;
+  background-color: white;
+  color: #10162f;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1rem;
+  width: 100%;
+  min-width: auto;
+  border-radius: 2 px;
+  transition: background-color 350ms ease-in-out, box-shadow 350ms ease-in-out;
+  border: 1px solid #10162f;
+  border-color: #10162f;
+  padding-left: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 3rem;
+}
+.select__container {
+  width: 100%;
+  min-width: 7rem;
+  position: relative;
+}
+.select__arrowContainer {
+  display: flex;
+  padding-right: 0.75rem;
+  color: #10162f;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  pointer-events: none;
+}
+.select__arrow {
+  width: 16px;
+  height: 16px;
+}
+.select--small {
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.select:disabled {
+  background-color: #dbdcdf;
+  cursor: no-drop;
+}
+
+.select:focus {
+  border: 1px solid #54c0b3;
+  box-shadow: inset 0 0 0 1px #54c0b3;
+}
